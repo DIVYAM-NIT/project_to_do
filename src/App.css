@@ -1,0 +1,25 @@
+body{
+    background-color: antiquewhite;
+}
+h2{
+    font-size: 40px;
+    font-style: italic;
+}
+.text_align{
+    text-align: left;
+}
+input{
+    width: 100%;
+}
+.btn-success,.btn-danger{
+    text-align: left;
+    width: 100%;
+}
+.buttons{
+    display: flex;
+    gap: 1rem;
+}
+
+.single_item{
+    margin: 1rem;
+}

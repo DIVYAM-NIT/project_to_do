@@ -23,3 +23,10 @@ input{
 .single_item{
     margin: 1rem;
 }
+.mycontainer{
+    background-color: bisque;
+    width: 90vh;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+

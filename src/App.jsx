@@ -5,6 +5,7 @@ import Input from './components/Input'
 import Items from './components/Items'
 import Empmes from './components/Empmes'
 import './App.css'
+import  {v4} from 'uuid'
 
 function App() {
 
@@ -22,10 +23,15 @@ function App() {
 
   const new_add = (e) => {
     e.preventDefault();
-    let new_list = [...ProductList, { product: input, dueDate: inputd }];
-    setProductList(new_list);
-    setinput("");
-    setinputd("");
+    if(input !="" && inputd !=""){
+      let new_list = [...ProductList, { product: input, dueDate: inputd }];
+      setProductList(new_list);
+      setinput("");
+      setinputd("");
+    }
+    else{
+      alert("Please input something in the input Boxes.");
+    }
   }
 
   const del = (e) => {
@@ -55,11 +61,13 @@ function App() {
   }
   return (
     <>
-      <center>
+      <center className='body'>
         <Heading />
-        <Input new_add={new_add} input={input} inputd={inputd} onChange={onChange} onChanged={onChanged} />
-        <Empmes ProductList={ProductList}/>
-        <Items ProductList={ProductList} del={del} update={update}/>
+        <div className="mycontainer">
+          <Input new_add={new_add} input={input} inputd={inputd} onChange={onChange} onChanged={onChanged} />
+          <Empmes ProductList={ProductList}/>
+          <Items ProductList={ProductList} del={del} update={update}/>
+        </div>
       </center>
     </>
   )

@@ -5,7 +5,7 @@ import Input from './components/Input'
 import Items from './components/Items'
 import Empmes from './components/Empmes'
 import './App.css'
-import  {v4} from 'uuid'
+import {v4} from 'uuid'
 
 function App() {
 
@@ -24,7 +24,7 @@ function App() {
   const new_add = (e) => {
     e.preventDefault();
     if(input !="" && inputd !=""){
-      let new_list = [...ProductList, { product: input, dueDate: inputd }];
+      let new_list = [...ProductList, { id: v4(), product: input, dueDate: inputd }];
       setProductList(new_list);
       setinput("");
       setinputd("");
@@ -35,18 +35,17 @@ function App() {
   }
 
   const del = (e) => {
-    console.log(e);
-    let prod = e;
+    let uid = e;
     let new_list = ProductList.filter((item) => {
-      return prod !== item.product ;
+      return uid !== item.id ;
     });
     setProductList(new_list);
   }
   
   const update =(e)=>{
-    let prod=e;
+    let uid=e;
     let new_list = ProductList.map((item) => {
-      if(prod !== item.product){
+      if(uid !== item.id){
         return item;
       }
       else{

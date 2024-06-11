@@ -11,10 +11,10 @@ export default function Input(props) {
                         <input className={styles.input} type="text" placeholder='Enter task' onChange={props.onChange} value={props.input} />
                     </div>
                     <div className="col">
-                        <input type="date" onChange={props.onChanged} value={props.inputd} />
+                        <input className={styles.input} type="date" onChange={props.onChanged} value={props.inputd} />
                     </div>
                     <div className="col">
-                        <button type='button' className='btn btn-success' onClick={props.new_add}>  ADD  </button>
+                        <button type='button' className={`btn btn-success ${styles.style}`} onClick={props.new_add}>  ADD  </button>
                     </div>
                 </div>
             </div>

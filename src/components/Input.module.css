@@ -1,3 +1,9 @@
 .input{
     width: 10rem;
+    border-radius: 10px;
+    border-color: blanchedalmond;
+    padding: 0.5rem;
+}
+.style{
+    font-size: 100rem;
 }

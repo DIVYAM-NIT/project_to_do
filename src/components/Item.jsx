@@ -1,5 +1,6 @@
 import React from 'react'
 import { GrUpdate } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 
 export default function Item(props) {
     return (
@@ -14,12 +15,12 @@ export default function Item(props) {
                     </div>
                     <div className="col">
                         <button type='button' className={`btn btn-danger`} onClick={() => {
-                            props.del(props.item_name);
-                        }}><GrUpdate /></button>
+                            props.del(props.id);
+                        }}><MdDelete /></button>
                     </div>
                     <div className="col">
                         <button type='button' className={`btn btn-danger`} onClick={() => {
-                            props.update(props.item_name);
+                            props.update(props.id);
                         }}><GrUpdate /></button>
                     </div>
                 </div>

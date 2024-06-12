@@ -54,19 +54,26 @@ function App() {
   
   const update =(e)=>{
     let uid=e;
-    let new_list = ProductList.map((item) => {
-      if(uid !== item.id){
-        return item;
-      }
-      else{
-        item.product=input;
-        item.dueDate=inputd;
-        return item;
-      }
-    });
-    setProductList(new_list);
-    setinput("");
-    setinputd("");
+    
+    if(input !="" && inputd !=""){
+      let new_list = ProductList.map((item) => {
+        if(uid !== item.id){
+          return item;
+        }
+        else{
+          item.product=input;
+          item.dueDate=inputd;
+          return item;
+        }
+      });
+      setProductList(new_list);
+      setinput("");
+      setinputd("");
+    }
+    else{
+      alert("Please input something in the input Boxes.");
+    }
+
   }
 
   useEffect(() => {

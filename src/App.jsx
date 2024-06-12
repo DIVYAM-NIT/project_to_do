@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 
 import Heading from './components/Heading'
 import Input from './components/Input'
@@ -9,7 +9,17 @@ import {v4} from 'uuid'
 
 function App() {
 
-  let [ProductList, setProductList] = useState([]);
+  function setinitial() {
+    let list = localStorage.getItem('list');
+    if (list) {
+      return JSON.parse(list);
+    }
+    else {
+      return []
+    }
+  }
+
+  let [ProductList, setProductList] = useState(setinitial());
 
   let [input, setinput] = useState("");
   let onChange = (e) => {
@@ -58,6 +68,11 @@ function App() {
     setinput("");
     setinputd("");
   }
+
+  useEffect(() => {
+    localStorage.setItem('list', JSON.stringify(ProductList));
+  }, [ProductList]);
+
   return (
     <>
       <center className='body'>
